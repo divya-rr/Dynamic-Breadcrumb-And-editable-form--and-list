@@ -1,0 +1,71 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group" [ngClass]="{'Invalid':isFieldValid('name')}">
+       <label for="name"  class="required" >
+         Name
+       </label>
+       <input type="text" class="form-control" value="{{form.value.name}}" id="name" formControlName="name">
+       <span  *ngIf="isFieldValid('name')">
+               <span *ngIf="form.get('name')?.errors?.['required']">Please inform your name</span>
+          
+           <span *ngIf="form.get('name')?.errors?.['pattern']">Only one space allowed in between first name and last name</span>
+        </span>
+   
+     
+   </div>
+
+   <div class="form-group"  [ngClass]="{'Invalid':isFieldValid('email')}">
+       <label for="email" class="required">Email</label>
+       <input type="text" class="form-control" id="email" value="{{form.value.email}}" formControlName="email">
+       <span *ngIf="isFieldValid('email')">
+         <span *ngIf="form.get('email')?.errors?.['required']">Please inform your email</span>
+         <span *ngIf="form.get('email')?.errors?.['pattern']">Please enter valid email address</span> 
+      </span>
+   </div>
+    
+
+   <div class="form-group row">
+       <div class="form-group col-md-6" [ngClass]="{'Invalid':isFieldValid('address')}">
+           <label for="address"  class="required">Address</label>
+           <input type="text" class="form-control" id="address" formControlName="address" value="{{form.value.address}}">
+           <small  *ngIf="isFieldValid('address')">Please inform your address</small>
+       </div>
+       <div class="form-group col-md-3" >
+           <label for="address-2">Address 2</label>
+           <input type="text" id="address" class="form-control">
+       </div>
+       <div class="form-group col-md-3" [ngClass]="{'Invalid':isFieldValid('zipCode')}">
+           <label for="zipCode"  class="required">Zip Code</label>
+           <input type="number" id="zipCode" class="form-control" id="zipCode" formControlName="zipCode" value="{{form.value.zipCode}}">
+           <span *ngIf="isFieldValid('zipCode')">
+           <span *ngIf="form.get('zipCode')?.errors?.['required']">Please inform your zip code</span>
+           <span *ngIf="form.get('zipcode')?.errors?.['pattern']"> Please enter valid 6 digits zip code</span>
+           </span>
+       </div>
+   </div>
+   <div class="form-group row">
+       <div class="form-group col-md-4" [ngClass]="{'Invalid':isFieldValid('city')}">
+           <label for="city"  class="required">City</label>
+           <input type="text" class="form-control" id="city" formControlName="city" value="{{form.value.city}}">
+           <small  *ngIf="isFieldValid('city')">Please inform your city</small>
+       </div>
+       <div class="form-group col-md-4" [ngClass]="{'Invalid':isFieldValid('state')}">
+           <label for="state" class="required">State/Province/Region</label>
+           <input type="text" id="state" class="form-control" formControlName="state">
+           <small  *ngIf="isFieldValid('state')">Please inform your state</small>
+       </div>
+       <div class="form-group col-md-4" [ngClass]="{'Invalid':isFieldValid('country')}">
+           <label for="country" class="required" >Country</label>
+           <input type="text" class="form-control" id="country" formControlName="country">
+           <small  *ngIf="isFieldValid('country')">Please inform your country</small>
+       </div>
+   </div>
+   <button class="btn btn-primary" >Submit</button>
+   <input type="reset" class="btn btn-default" value="reset">
+   <!-- {{form.value|json}} -->
+   </form>
+   </div>
+  
+
+

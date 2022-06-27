@@ -1,0 +1,25 @@
+<div class="container">
+    <div *ngFor="let user of no_of_users; let i=index" class="card shadow m-5">
+    <div class="section">
+        <img class="p-3" height="100px" width="100px" src="../../assets/profile_pic.png" alt="">
+        <div>
+            
+    <h6 class="p-3">{{user.name}}</h6>
+    <h6 class="px-3">{{user.email}}</h6>
+    </div>
+    <div>
+    
+    <div class="dropdown">
+    <i class="bi bi-three-dots-vertical p-5" data-bs-toggle="dropdown" style="color: black;"></i>
+    <div class="dropdown-menu">
+        <div class="btn btn-primary dropdown-item" routerLink="/reactive">Add</div>
+        <div class="btn btn-secondary dropdown-item" (click)="edit(i)">Edit</div>
+    </div>
+    </div>
+    </div>
+   
+    </div>
+ 
+
+</div>
+</div>
