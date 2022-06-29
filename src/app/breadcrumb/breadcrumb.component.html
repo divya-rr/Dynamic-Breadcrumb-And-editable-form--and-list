@@ -1,0 +1,10 @@
+<div class="mt-5" style="color: black">
+  <span class="b" *ngFor="let breadcrumb of breadcrumbs; let last = last">
+    <small>
+      <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a></small
+    >
+    <span *ngIf="!last"
+      ><small> {{ deliminator }} </small></span
+    >
+  </span>
+</div>

@@ -7,13 +7,24 @@ import { HeaderComponent } from './header/header.component';
 import { ListComponent } from './list/list.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddComponent } from './add/add.component';
+import { HomeComponent } from './home/home.component';
+import { ChildComponent } from './child/child.component';
+import { GrandChildComponent } from './grand-child/grand-child.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListComponent,
-    FormComponent
+    FormComponent,
+    AddComponent,
+    
+    BreadcrumbComponent,
+   
   ],
   imports: [
     BrowserModule,
