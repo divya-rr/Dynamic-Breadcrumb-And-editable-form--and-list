@@ -47,7 +47,7 @@ export class BreadcrumbComponent implements OnInit {
 
               console.log(route.snapshot.data);
 
-              console.log(route.snapshot.data['breadCrum']);
+             
 
               currentRoute = route;
             }

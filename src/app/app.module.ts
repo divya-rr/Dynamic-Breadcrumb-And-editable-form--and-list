@@ -14,6 +14,8 @@ import { GrandChildComponent } from './grand-child/grand-child.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
+import { UsersModule } from './users/users.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { UserComponent } from './users/user/user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule
+    AppRoutingModule,ReactiveFormsModule,UsersModule,HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
